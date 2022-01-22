@@ -1,0 +1,13 @@
+{
+	"script": "MsVoxxie.js",
+	"watch": [
+		"MsVoxxie.js"
+	],
+	"ignore_watch": [
+		"/home/bots/TwitterBanner/MsVoxxie/img"
+	],
+	"watch_options": {
+		"followSymlinks": false
+	},
+	"name": "MsVoxxie Banner"
+}
