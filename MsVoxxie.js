@@ -23,11 +23,12 @@ const numFollowers = 5;
 const whFollowers = 90;
 
 async function saveAvatar(user, path) {
-	const tempURL = await user.profile_image_url_https.slice(0, -11);
-	const fullURL = `${tempURL}.jpg`;
+	const tempURL = await user.profile_image_url_https; //.slice(0, -11);
+	// const fullURL = `${tempURL}.jpg`;
 
 	const response = await axios({
-		url: fullURL,
+		// url: fullURL,
+		url: tempURL,
 		responseType: 'arraybuffer',
 	});
 	await sharp(response.data).resize(whFollowers, whFollowers).toFile(path);
@@ -87,8 +88,8 @@ async function Start() {
 	console.log(`Ran At› ${moment().format('MMMM Do YYYY, h:mm:ss a')}`);
 }
 
-// Start();
+Start();
 
-cron.schedule('* * * * *', function () {
-	Start();
-});
+// cron.schedule('* * * * *', function () {
+// 	Start();
+// });
