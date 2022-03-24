@@ -88,8 +88,8 @@ async function Start() {
 	console.log(`Ran At› ${moment().format('MMMM Do YYYY, h:mm:ss a')}`);
 }
 
-Start();
+// Start();
 
-// cron.schedule('* * * * *', function () {
-// 	Start();
-// });
+cron.schedule('*/5 * * * *', function () {
+	Start();
+});
