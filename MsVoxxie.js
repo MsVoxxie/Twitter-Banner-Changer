@@ -90,6 +90,6 @@ async function Start() {
 
 // Start();
 
-cron.schedule('*/5 * * * *', function () {
+cron.schedule('0 * * * *', function () {
 	Start();
 });
